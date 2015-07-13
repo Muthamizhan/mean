@@ -28,7 +28,7 @@ app.post('/contactlist',function(request,response){
 });
 
 app.delete('/contactlist/:id',function(request,response){
-	var id = request.param.id;
+	var id = request.params.id;
 	console.log(id);
 	db.contactlist.remove({_id:mongojs.ObjectId(id)},function(err,docs){
 		response.json(docs)

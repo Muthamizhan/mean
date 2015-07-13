@@ -22,7 +22,7 @@ app.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.remove = function(id){
     	console.log(id);
-    	$http.delete("/contactlist/",id).success(function(response){
+    	$http.delete("/contactlist/"+id).success(function(response){
     		console.log(response);
     		refresh();
     	});
