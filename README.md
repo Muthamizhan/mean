@@ -7,4 +7,4 @@ npm install mongojs
 
 npm install body-parser
 
-bower install angular, angular-animat,angular-aria,angular-material
+bower install angular,angular-animat,angular-aria,angular-material

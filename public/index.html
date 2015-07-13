@@ -57,8 +57,8 @@
                     </md-input-container>
                 </div>
                 <div flex>
-                    <md-button class="md-raised" ng-click="addContact()">Add</md-button>
-                    <md-button class="md-primary md-raised" ng-click="update()">Update</md-button>
+                    <md-button class="md-raised" ng-click="addContact()" ng-disabled="contact._id != null">Add</md-button>
+                    <md-button class="md-primary md-raised" ng-disabled="contact._id == null" ng-click="update()">Update</md-button>
                 </div>
             </md-whiteframe>
         </div>
