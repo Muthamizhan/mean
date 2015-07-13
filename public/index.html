@@ -11,7 +11,7 @@
 <body>
     <div class="container" ng-controller="AppCtrl">
         <div class="col-sm-12">
-            <md-content class="md-whiteframe-z1">
+            <!-- <md-content class="md-whiteframe-z1">
                 <md-toolbar>
                     <div class="md-toolbar-tools">
                         <md-button class="md-icon-button" aria-label="Settings">
@@ -19,9 +19,9 @@
                         </md-button>
                     </div>
                 </md-toolbar>
-            </md-content>
+            </md-content> -->
             <div layout="column" class="list-wrapper wrapper-postion">
-                <md-whiteframe class="md-whiteframe-z3 whitefrme" layout layout-align="end center">
+                <md-whiteframe class="md-whiteframe-z3 whitefrme" layout layout-align="center center">
                     <div flex>
                         <h2 class="md-title">Name</h2>
                     </div>
@@ -31,11 +31,39 @@
                     <div flex>
                         <h3 class="md-title">Number</h3>
                     </div>
+                    <div flex>
+                        <h3 class="md-title">Action</h3>
+                    </div>
+                </md-whiteframe>
+            </div>
+            <div layout="column" class="list-wrapper wrapper-postion">
+                <md-whiteframe class="md-whiteframe-z2 whitefrme" layout layout-align="center center">
+                    <div flex>
+                        <md-input-container>
+                            <label>Name</label>
+                            <input ng-model="contact.name">
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                         <md-input-container>
+                            <label>email</label>
+                            <input ng-model="contact.email">
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <label>Phone</label>
+                            <input ng-model="contact.number">
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-button class="md-raised" onclick="loadData()">Add</md-button>
+                    </div>
                 </md-whiteframe>
             </div>
             <!-- ng-repeat -->
             <div layout="column" class="list-wrapper wrapper-postion" ng-repeat="list in contactList">
-                <md-whiteframe class="md-whiteframe-z1 whitefrme" layout layout-align="end center">
+                <md-whiteframe class="md-whiteframe-z1 whitefrme" layout layout-align="center center">
                     <div flex>
                         <h2 class="md-title">{{list.name}}</h2>
                     </div>
@@ -43,7 +71,10 @@
                         <h3 class="md-title">{{list.email}}</h3>
                     </div>
                     <div flex>
-                        <h3 class="md-title">{{list.Number}}</h3>
+                        <h3 class="md-title">{{list.number}}</h3>
+                    </div>
+                    <div flex>
+                         <md-button class="md-raised">Edit</md-button>
                     </div>
                 </md-whiteframe>
             </div>

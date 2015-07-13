@@ -1,32 +1,18 @@
 var express = require('express');
 var app = express();
 
-/*app.get('/',function(req,res){
-	res.send("Hello World from server.js")
-});*/
+var mongojs = require('mongojs');
+var db = mongojs('contactlist',['contactlist'])
+
 
 app.use(express.static(__dirname + "/public"));
 
 app.get('/contactlist', function(request, response) {
-    console.log("hi get");
-    var data = [{
-        "name": "Muthu",
-        "email": "muthu@email.com",
-        "Number": "111 111 222"
-    }, {
-        "name": "Thamizh",
-        "email": "thamizh@email.com",
-        "Number": "222 222 222"
-    }, {
-        "name": "Ms",
-        "email": "ms@email.com",
-        "Number": "33 333 333"
-    }, {
-        "name": "MSD",
-        "email": "msd@email.com",
-        "Number": "444 44 444"
-    }];
-    response.json(data);
+   console.log("hi get");
+   db.contactlist.find(function(err,docs){
+   		console.log(err,docs)
+   		response.json(docs);
+   });
 });
 
 app.listen(3000);
