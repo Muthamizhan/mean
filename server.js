@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
+/*fetch whole collection value*/
 app.get('/contactlist', function(request, response) {
     console.log("hi get");
     db.contactlist.find(function(err, docs) {
@@ -17,6 +18,7 @@ app.get('/contactlist', function(request, response) {
     });
 });
 
+/*add new values to the collection*/
 app.post('/contactlist', function(request, response) {
 
     console.log(request.body);
@@ -26,18 +28,23 @@ app.post('/contactlist', function(request, response) {
     });
 
 });
+
+/*Fetch specific values from collections*/
 app.get('/contactlist/:id', function(request, response) {
     var id = request.params.id;
-    console.log(request.body.name);
+   /* console.log(request.body.name);*/
     db.contactlist.findOne({
         _id: mongojs.ObjectId(id)
     }, function(err, docs) {
         response.json(docs)
     });
 });
+
+
+/*Update Data*/
 app.put('/contactlist/:id', function(request, response) {
     var id = request.params.id;
-    console.log(id);
+   /* console.log(id);*/
     db.contactlist.findAndModify({
         query: {
             _id: mongojs.ObjectId(id)
@@ -54,9 +61,11 @@ app.put('/contactlist/:id', function(request, response) {
         response.json(docs);
     });
 });
+
+/*Delete query*/
 app.delete('/contactlist/:id', function(request, response) {
     var id = request.params.id;
-    console.log(id);
+   /* console.log(id);*/
     db.contactlist.remove({
         _id: mongojs.ObjectId(id)
     }, function(err, docs) {
@@ -64,5 +73,6 @@ app.delete('/contactlist/:id', function(request, response) {
     });
 });
 
+/*set port*/
 app.listen(3000);
 console.log("localhost:3000 ");

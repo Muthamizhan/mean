@@ -4,83 +4,83 @@
 <head>
     <title>MEAN Stack</title>
 </head>
-<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
 
 <body>
-    <div ng-controller="AppCtrl" class="container">
-        <div clas="col-md-sm-12">
-            <!-- <md-content class="md-whiteframe-z1">
-                <md-toolbar>
-                    <div class="md-toolbar-tools">
-                        <md-button class="md-icon-button" aria-label="Settings">
-                            <md-icon md-svg-icon="img/menu.svg"></md-icon>
-                        </md-button>
-                    </div>
-                </md-toolbar>
-            </md-content> -->
-            <div layout="column" class="list-wrapper wrapper-postion">
-                <md-whiteframe class="md-whiteframe-z3 whitefrme" layout layout-align="center center">
-                    <div flex>
-                        <h2 class="md-title">Name</h2>
-                    </div>
-                    <div flex>
-                        <h3 class="md-title">Email</h3>
-                    </div>
-                    <div flex>
-                        <h3 class="md-title">Number</h3>
-                    </div>
-                    <div flex>
-                        <h3 class="md-title">Action</h3>
-                    </div>
-                </md-whiteframe>
-            </div>
-            <div layout="column" class="list-wrapper wrapper-postion">
-                <md-whiteframe class="md-whiteframe-z2 whitefrme" layout-gt-sm layout-align-sm="center center" >
-                    <div flex>
-                        <md-input-container>
-                            <label>Name</label>
-                            <input type="name" ng-model="contact.name" ng-required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-input-container>
-                            <label>email</label>
-                            <input type="email" ng-model="contact.email" ng-required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-input-container>
-                            <label>Phone</label>
-                            <input type="phone" ng-model="contact.number" ng-required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-button class="md-raised" ng-click="addContact()">Add</md-button>
-                        <md-button class="md-primary md-raised" ng-click="update()">Update</md-button>
-                    </div>
-                </md-whiteframe>
-            </div>
-            <!-- ng-repeat -->
-            <div layout="column" class="list-wrapper wrapper-postion" ng-repeat="list in contactList">
-                <md-whiteframe class="md-whiteframe-z1 whitefrme" layout-gt-sm layout-align-sm="center center" >
-                    <div flex>
-                        <h2 class="md-title">{{list.name}}</h2>
-                    </div>
-                    <div flex>
-                        <h3 class="md-title">{{list.email}}</h3>
-                    </div>
-                    <div flex>
-                        <h3 class="md-title">{{list.number}}</h3>
-                    </div>
-                    <div flex>
-                        <md-button class="md-raised md-warn" ng-click="remove(list._id)">delete</md-button>
-                        <md-button class="md-raised md-primary" ng-click="edit(list._id)">edit</md-button>
-                    </div>
-                </md-whiteframe>
-            </div>
+    <!-- AppCtrl -->
+    <div ng-controller="AppCtrl">
+        <md-content class="md-whiteframe-z1">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <span>
+                        MEAN Stack
+                    </span>
+                </div>
+            </md-toolbar>
+        </md-content>
+        <!-- End of Top Bar -->
+        <div layout="column" class="list-wrapper wrapper-postion">
+            <md-whiteframe class="md-whiteframe-z3 whitefrme" layout layout-align="center center">
+                <div flex>
+                    <h2 class="md-title">Name</h2>
+                </div>
+                <div flex>
+                    <h3 class="md-title">Email</h3>
+                </div>
+                <div flex>
+                    <h3 class="md-title">Number</h3>
+                </div>
+                <div flex>
+                    <h3 class="md-title">Action</h3>
+                </div>
+            </md-whiteframe>
         </div>
+        <!--title End -->
+        <div layout="column" class="list-wrapper wrapper-postion">
+            <md-whiteframe class="md-whiteframe-z2 whitefrme" layout-gt-sm layout-align-sm="center center">
+                <div flex>
+                    <md-input-container>
+                        <label>Name</label>
+                        <input type="name" ng-model="contact.name" ng-required>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container>
+                        <label>email</label>
+                        <input type="email" ng-model="contact.email" ng-required>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container>
+                        <label>Phone</label>
+                        <input type="phone" ng-model="contact.number" ng-required>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-button class="md-raised" ng-click="addContact()">Add</md-button>
+                    <md-button class="md-primary md-raised" ng-click="update()">Update</md-button>
+                </div>
+            </md-whiteframe>
+        </div>
+        <!-- ng-repeat -->
+        <div layout="column" class="list-wrapper wrapper-postion" ng-repeat="list in contactList">
+            <md-whiteframe class="md-whiteframe-z1 whitefrme" layout-gt-sm layout-align-sm="center center">
+                <div flex>
+                    <h2 class="md-title">{{list.name}}</h2>
+                </div>
+                <div flex>
+                    <h3 class="md-title">{{list.email}}</h3>
+                </div>
+                <div flex>
+                    <h3 class="md-title">{{list.number}}</h3>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-warn" ng-click="remove(list._id)">delete</md-button>
+                    <md-button class="md-raised md-primary" ng-click="edit(list._id)">edit</md-button>
+                </div>
+            </md-whiteframe>
+        </div>
+        <!-- ng-repeat end -->
     </div>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
