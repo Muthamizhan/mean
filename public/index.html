@@ -9,8 +9,8 @@
 <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
 
 <body>
-    <div class="container" ng-controller="AppCtrl">
-        <div class="col-sm-12">
+    <div ng-controller="AppCtrl" class="container">
+        <div clas="col-md-sm-12">
             <!-- <md-content class="md-whiteframe-z1">
                 <md-toolbar>
                     <div class="md-toolbar-tools">
@@ -57,24 +57,24 @@
                         </md-input-container>
                     </div>
                     <div flex>
-                        <md-button class="md-raised" onclick="loadData()">Add</md-button>
+                        <md-button class="md-primary md-raised" ng-click="addContact()">Add</md-button>
                     </div>
                 </md-whiteframe>
             </div>
             <!-- ng-repeat -->
             <div layout="column" class="list-wrapper wrapper-postion" ng-repeat="list in contactList">
                 <md-whiteframe class="md-whiteframe-z1 whitefrme" layout layout-align="center center">
-                    <div flex>
+                    <div class="col-sm-6">
                         <h2 class="md-title">{{list.name}}</h2>
                     </div>
-                    <div flex>
+                    <div class="col-sm-6">
                         <h3 class="md-title">{{list.email}}</h3>
-                    </div>
-                    <div flex>
+                    </div >
+                    <div class="col-sm-6">
                         <h3 class="md-title">{{list.number}}</h3>
                     </div>
-                    <div flex>
-                         <md-button class="md-raised">Edit</md-button>
+                    <div class="col-sm-6">
+                         <md-button class="md-raised md-warn" ng-click="remove(list._id)">delete</md-button>
                     </div>
                 </md-whiteframe>
             </div>
