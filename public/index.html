@@ -41,23 +41,24 @@
                     <div flex>
                         <md-input-container>
                             <label>Name</label>
-                            <input ng-model="contact.name">
+                            <input type="name" ng-model="contact.name" ng-required>
                         </md-input-container>
                     </div>
                     <div flex>
                          <md-input-container>
                             <label>email</label>
-                            <input ng-model="contact.email">
+                            <input type="email" ng-model="contact.email" ng-required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
                             <label>Phone</label>
-                            <input ng-model="contact.number">
+                            <input type="phone" ng-model="contact.number" ng-required>
                         </md-input-container>
                     </div>
                     <div flex>
-                        <md-button class="md-primary md-raised" ng-click="addContact()">Add</md-button>
+                        <md-button class="md-raised" ng-click="addContact()" ng-disabled="contact.email.$error && contact.email.$invalid">Add</md-button>
+                        <md-button class="md-primary md-raised" ng-click="update()">Update</md-button>
                     </div>
                 </md-whiteframe>
             </div>
@@ -75,6 +76,7 @@
                     </div>
                     <div class="col-sm-6">
                          <md-button class="md-raised md-warn" ng-click="remove(list._id)">delete</md-button>
+                         <md-button class="md-raised md-primary" ng-click="edit(list._id)">edit</md-button>
                     </div>
                 </md-whiteframe>
             </div>
