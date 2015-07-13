@@ -37,7 +37,7 @@
                 </md-whiteframe>
             </div>
             <div layout="column" class="list-wrapper wrapper-postion">
-                <md-whiteframe class="md-whiteframe-z2 whitefrme" layout layout-align="center center">
+                <md-whiteframe class="md-whiteframe-z2 whitefrme" layout-gt-sm layout-align-sm="center center" >
                     <div flex>
                         <md-input-container>
                             <label>Name</label>
@@ -45,7 +45,7 @@
                         </md-input-container>
                     </div>
                     <div flex>
-                         <md-input-container>
+                        <md-input-container>
                             <label>email</label>
                             <input type="email" ng-model="contact.email" ng-required>
                         </md-input-container>
@@ -57,26 +57,26 @@
                         </md-input-container>
                     </div>
                     <div flex>
-                        <md-button class="md-raised" ng-click="addContact()" ng-disabled="contact.email.$error && contact.email.$invalid">Add</md-button>
+                        <md-button class="md-raised" ng-click="addContact()">Add</md-button>
                         <md-button class="md-primary md-raised" ng-click="update()">Update</md-button>
                     </div>
                 </md-whiteframe>
             </div>
             <!-- ng-repeat -->
             <div layout="column" class="list-wrapper wrapper-postion" ng-repeat="list in contactList">
-                <md-whiteframe class="md-whiteframe-z1 whitefrme" layout layout-align="center center">
-                    <div class="col-sm-6">
+                <md-whiteframe class="md-whiteframe-z1 whitefrme" layout-gt-sm layout-align-sm="center center" >
+                    <div flex>
                         <h2 class="md-title">{{list.name}}</h2>
                     </div>
-                    <div class="col-sm-6">
+                    <div flex>
                         <h3 class="md-title">{{list.email}}</h3>
-                    </div >
-                    <div class="col-sm-6">
+                    </div>
+                    <div flex>
                         <h3 class="md-title">{{list.number}}</h3>
                     </div>
-                    <div class="col-sm-6">
-                         <md-button class="md-raised md-warn" ng-click="remove(list._id)">delete</md-button>
-                         <md-button class="md-raised md-primary" ng-click="edit(list._id)">edit</md-button>
+                    <div flex>
+                        <md-button class="md-raised md-warn" ng-click="remove(list._id)">delete</md-button>
+                        <md-button class="md-raised md-primary" ng-click="edit(list._id)">edit</md-button>
                     </div>
                 </md-whiteframe>
             </div>
